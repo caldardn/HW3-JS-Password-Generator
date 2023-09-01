@@ -1,9 +1,9 @@
-// Assignment Code
+// Assignment Coden
 var generateBtn = document.querySelector("#generate");
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = upperCase.toLowerCase();
 var numeric = "1234567890";
-var special = " !#$%&'()*+,-./:;<=>?@[]^_`{|}~ ";
+var special = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 // alert("Welcome to DNC's password generator!!");
 
@@ -18,36 +18,47 @@ function writePassword() {
 function generatePassword() {
   var usersChoices = "";
   var passWord = "";
-  var length = prompt("Please enter the character length of your password (8-128)");
-  console.log(length)
+  var lenght = window.prompt(
+    "Please enter the character length of your password (8-128)"
+  );
 
-  if (length >= 8 && length <= 128) {
-    var upperCase = confirm("Would you like Uppercase letters in your password?");
-    var lowerCase = confirm("Would you like Lowercase letters in your password?");
-    var numeric = confirm("Would you like Numbers in your password?");
-    var special = confirm("Finally, would you like Special characters in your password");
+  if (lenght >= 8 && lenght <= 128) {
+    var chosenUpper = window.confirm(
+      "Would you like Uppercase letters in your password?"
+    );
+    var chosenLower = window.confirm(
+      "Would you like Lowercase letters in your password?"
+    );
+    var chosenNum = window.confirm("Would you like Numbers in your password?"
+    );
+    var chosenSpec = window.confirm(
+      "Finally, would you like Special characters in your password"
+    );
 
-    if (upperCase === true) {
+    if (chosenUpper === true) {
       usersChoices = usersChoices.concat(upperCase);
     }
-    if (lowerCase === true) {
+    if (chosenLower === true) {
       usersChoices = usersChoices.concat(lowerCase);
     }
-    if (numeric === true) {
+    if (chosenNum === true) {
       usersChoices = usersChoices.concat(numeric);
     }
-    if (special === true) {
+    if (chosenSpec === true) {
       usersChoices = usersChoices.concat(special);
-    } 
+    } else {
+      
+    }
+  } else {
+    alert("Invalid response, please try again.");
   }
-   for (var i = 0; i < length; i++) {
-    var passString = Math.floor(Math.random() + usersChoices.length);
+
+  for (var i = 0; i < lenght; i++) {
+    var passString = Math.floor(Math.random() * usersChoices.length);
     passWord = passWord + usersChoices[passString];
-    console.log(passWord)
   }
-  
+
   return passWord;
 }
-
 
 generateBtn.addEventListener("click", writePassword);
