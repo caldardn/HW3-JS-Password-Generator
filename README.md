@@ -8,4 +8,4 @@ This Challenge requires to modify starter code to create an application that ena
 <img src="./assets/images/03-javascript-homework-demo.png" alt="Image of the password generator application."/>
 
 ## credits
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_methods
+MozDevNet. (n.d.). String - javascript: MDN. JavaScript | MDN. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_methods 
