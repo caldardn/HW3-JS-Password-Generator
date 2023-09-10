@@ -1,4 +1,4 @@
-// Assignment Coden
+// Assignment Code
 var generateBtn = document.querySelector("#generate");
 var passCriteria = {
   upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
@@ -19,12 +19,15 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// Code that will generate the password
 function generatePassword() {
   var usersChoices = "";
   var passWord = "";
   var length = window.prompt(
     "Please enter the character length of your password (8-128)"
   );
+
+  // confirming users selection
 
   if (length >= 8 && length <= 128) {
     var chosenUpper = window.confirm(
@@ -39,6 +42,8 @@ function generatePassword() {
     var chosenSpec = window.confirm(
       "Finally, would you like Special characters in your password"
     );
+
+// concatenating users choices
 
     if (chosenUpper === true) {
       usersChoices = usersChoices.concat(passCriteria.upper);
