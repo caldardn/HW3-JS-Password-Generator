@@ -1,12 +1,10 @@
 var generateBtn = document.querySelector("#generate");
 var passCriteria = {
   upper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-  lower:"abcdefghijklmnopqrstuvwxyz",
+  lower: "abcdefghijklmnopqrstuvwxyz",
   num: "1234567890",
-  spec: "!#$%&'()*+,-./:;<=>?@[]^_`{|}~"
+  spec: "!#$%&'()*+,-./:;<=>?@[]^_`{|}~",
 };
-
-
 
 alert("Welcome to DNC's password generator!!");
 
@@ -35,14 +33,12 @@ function generatePassword() {
     var chosenLower = window.confirm(
       "Would you like Lowercase letters in your password?"
     );
-    var chosenNum = window.confirm(
-      "Would you like Numbers in your password?"
-    );
+    var chosenNum = window.confirm("Would you like Numbers in your password?");
     var chosenSpec = window.confirm(
       "Finally, would you like Special characters in your password"
     );
 
-// concatenating users choices
+    // concatenating users choices
 
     if (chosenUpper === true) {
       usersChoices = usersChoices.concat(passCriteria.upper);
@@ -55,10 +51,17 @@ function generatePassword() {
     }
     if (chosenSpec === true) {
       usersChoices = usersChoices.concat(passCriteria.spec);
+    }
+    if (!chosenUpper && !chosenLower && !chosenNum && !chosenSpec) {
+      alert(
+        "Invalid response, please select atleast one integer for your password."
+      );
+      return generatePassword();
     } else {
     }
   } else {
     alert("Invalid response, please try again.");
+    return generatePassword();
   }
 
   for (var i = 0; i < length; i++) {
